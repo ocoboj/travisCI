@@ -3,7 +3,7 @@ services:
 - docker
 script:
 - docker build -t cloud
-after success:
+after_success:
 - docker login -u $DOCKER USER -p $DOCKER PASSWORD
 - docker tag cloud $DOCKER USER/olga cloud
 - docker push $DOCKER USER/olga cloud
